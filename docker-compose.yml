@@ -1,0 +1,62 @@
+version: '3.8'
+services:
+
+  backend:
+    build:
+      context: .
+      dockerfile: ./_docker/backend/Dockerfile
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+    volumes:
+      - ./api:/var/www
+      - ./_docker/backend/php.ini:/usr/local/etc/php/php.ini
+    container_name: cp_rfo_app
+    # depends_on:
+    #   - db
+
+  nginx:
+    image: nginx:alpine
+    restart: unless-stopped
+    ports:
+      - "85:80"
+    volumes:
+      - ./api:/var/www
+      - ./_docker/nginx/conf.d/:/etc/nginx/conf.d/
+      - ./_docker/nginx/logs:/var/log/nginx
+    container_name: cp_rfo_nginx
+    depends_on:
+      - backend
+  # db:
+  #   image: mysql:5.7.22
+  #   restart: unless-stopped
+  #   ports:
+  #     - "3306:3306"
+  #   command:
+  #     [
+  #       '--character-set-server=utf8mb4',
+  #       '--collation-server=utf8mb4_unicode_ci',
+  #       '--default-authentication-plugin=mysql_native_password'
+  #     ]
+  #   env_file:
+  #     - ./_docker/mysql/mysql.env
+  #   volumes:
+  #     - ./_docker/mysql/dbdata:/var/lib/mysql
+  #     - ./_docker/mysql/my.cnf:/etc/mysql/my.cnf
+  #   container_name: cp_aion_mysql
+  #   healthcheck:
+  #     test: [ "CMD", "mysqladmin", "ping" ]
+
+  # node:
+  #   build:
+  #     context: .
+  #     dockerfile: ./_docker/nodejs/Dockerfile
+  #   restart: always
+  #   ports:
+  #     - "3000:3000"
+  #   working_dir: /home/node/app/resources/js
+  #   # command: sh -c "npm install && npm run build"
+  #   command: sh -c "npm install && npm run dev"
+  #   volumes:
+  #     - .:/home/node/app
+  #   container_name: cp_aion_nodejs
