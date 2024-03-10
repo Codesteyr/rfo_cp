@@ -1,0 +1,610 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+:before,
+:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.login-signup-form {
+  background: #111111;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login-signup-form .form {
+  width: 370px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+  background: rgba(28, 28, 28, 0.7);
+  max-width: 370px;
+  padding: 34px;
+  -webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.login-signup-form .title {
+  font-size: 20px;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #fff;
+}
+
+.login-signup-form .form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 16px;
+  text-align: center;
+}
+
+.login-signup-form .form .message a {
+  color: #96d3ff;
+  text-decoration: none;
+}
+
+input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  outline: 0;
+  background: #2e2e2e;
+  color: #fff;
+  width: 100%;
+  font-family: "El Messiri", sans-serif;
+  font-size: 17px;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+
+.login input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: 0;
+  background: #2e2e2e;
+  color: #fff;
+  width: 100%;
+  font-family: "El Messiri", sans-serif;
+  font-size: 17px;
+  border-radius: 4px;
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.login input::-webkit-input-placeholder {
+  color: #999;
+}
+.login input::-moz-placeholder {
+  color: #999;
+}
+.login input:-ms-input-placeholder {
+  color: #999;
+}
+.login input::-ms-input-placeholder {
+  color: #999;
+}
+.login input::placeholder {
+  color: #999;
+}
+
+.loginSignup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+
+.loginSignup input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: 0;
+  background: #2e2e2e;
+  color: #fff;
+  width: 100%;
+  font-family: "El Messiri", sans-serif;
+  font-size: 17px;
+  border-radius: 4px;
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.loginSignup input::-webkit-input-placeholder {
+  color: #999;
+}
+.loginSignup input::-moz-placeholder {
+  color: #999;
+}
+.loginSignup input:-ms-input-placeholder {
+  color: #999;
+}
+.loginSignup input::-ms-input-placeholder {
+  color: #999;
+}
+.loginSignup input::placeholder {
+  color: #999;
+}
+
+#defaultLayout .content {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#defaultLayout header {
+  padding: 2rem 3rem;
+  background-color: #2a2a2a;
+  -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#defaultLayout .content .sidebar {
+  width: 200px;
+  background-color: #101010;
+  padding: 2rem;
+  -webkit-transition: width 0.4s;
+  transition: width 0.4s;
+}
+
+#defaultLayout .content.sidebar-open .sidebar {
+  width: 0;
+}
+
+.sidebar-open {
+  display: none;
+}
+
+#defaultLayout .content .main-content {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 2rem;
+  -webkit-transition: margin-left 0.4s;
+  transition: margin-left 0.4s;
+}
+
+#defaultLayout .content.sidebar-open .main-content {
+  margin-left: 200px;
+}
+
+#defaultLayout .burger-menu {
+  cursor: pointer;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+#defaultLayout .burger-menu .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 6px 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+#defaultLayout main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: #373737;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+}
+
+.container {
+  background-color: #373737;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.headerInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 40px;
+}
+
+hr {
+  width: 200px;
+  height: 2px;
+  border-radius: 1px;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+}
+
+p {
+  font-family: "El Messiri", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  color: #fff;
+}
+
+h2 {
+  font-family: "El Messiri", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 17px;
+  color: #fff;
+}
+
+.header--panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.account--information-board {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+.account--board {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.account {
+  width: 957px;
+  height: 182px;
+  /* Автолейаут */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 0px;
+  border-radius: 9px;
+  background-color: #282828;
+}
+
+.account-desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+.account-desc h2 {
+  color: #807f7f;
+}
+
+.account-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+.account-name h2 {
+  color: #d0e5b9;
+}
+
+.rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.rating .rating--title {
+  margin-top: 30px;
+}
+.rating .rating--title h2 {
+  color: #868686;
+  font-size: 25px;
+}
+
+.repair--account button {
+  width: 221px;
+  height: 45px;
+  left: 1007px;
+  right: 686px;
+  top: 193px;
+  bottom: 832px;
+  /* Автолейаут */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 6px;
+  background: rgb(152, 215, 146);
+}
+.repair--account button p {
+  font-size: 16px;
+}
+
+.account {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 344px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.account--info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+
+.race--icon {
+  width: 50px;
+  height: 50px;
+  background-color: #807f7f;
+}
+
+.account--detailed {
+  width: 957px;
+  height: 655px;
+  left: 337px;
+  right: 626px;
+  top: 331px;
+  bottom: 94px;
+  border-radius: 9px;
+  background: #282828;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.account--detailed .detailed--title {
+  margin-top: 30px;
+}
+.account--detailed .detailed--title h2 {
+  color: #868686;
+  font-size: 25px;
+}
+
+.rating {
+  width: 548px;
+  height: 856px;
+  left: 1318px;
+  right: 54px;
+  top: 130px;
+  bottom: 94px;
+  border-radius: 9px;
+  background: #282828;
+}
+
+.main--panel {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1; /* равномерное распределение пространства между блоками */
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px; /* регулируйте отступы внутри блоков по вашему вкусу */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+.rating {
+  -ms-flex-preferred-size: calc(50% - 5px);
+      flex-basis: calc(50% - 5px); /* вычисляем ширину, учитывая отступ между блоками */
+}

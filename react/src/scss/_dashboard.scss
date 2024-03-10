@@ -1,0 +1,173 @@
+@mixin font($size, $weight) {
+  font-family: "El Messiri", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: $weight;
+  font-style: normal;
+  font-size: $size;
+}
+
+hr {
+  width: 200px;
+  height: 2px;
+  border-radius: 1px;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+}
+p {
+  @include font(20px, 700);
+  color: #fff;
+}
+h2 {
+  @include font(17px, 800);
+  color: #fff;
+}
+
+.header--panel {
+  display: flex;
+  margin: 20px;
+  justify-content: space-between;
+}
+.account--information-board {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.account--board {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+// .source-serif 4-<uniquifier> {
+//   font-family: "Source Serif 4", serif;
+//   font-optical-sizing: auto;
+//   font-weight: <weight>;
+//   font-style: normal;
+// }
+
+.account {
+  width: 957px;
+  height: 182px;
+  /* Автолейаут */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0px;
+  border-radius: 9px;
+  background-color: #282828;
+}
+
+.account-desc {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  h2 {
+    color: #807f7f;
+  }
+}
+
+.account-name {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  h2 {
+    color: #d0e5b9;
+  }
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+  .rating--title {
+    margin-top: 30px;
+    h2 {
+      color: #868686;
+      font-size: 25px;
+    }
+  }
+}
+
+.repair--account button {
+  width: 221px;
+  height: 45px;
+  left: 1007px;
+  right: 686px;
+  top: 193px;
+  bottom: 832px;
+  /* Автолейаут */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background: rgb(152, 215, 146);
+  p {
+    font-size: 16px;
+  }
+}
+
+.account {
+  display: flex;
+  gap: 344px;
+  align-items: center;
+  justify-content: center;
+}
+
+.account--info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.race--icon {
+  width: 50px;
+  height: 50px;
+  background-color: #807f7f;
+}
+
+.account--detailed {
+  width: 957px;
+  height: 655px;
+  left: 337px;
+  right: 626px;
+  top: 331px;
+  bottom: 94px;
+  border-radius: 9px;
+  background: #282828;
+  display: flex;
+  justify-content: center;
+  .detailed--title {
+    margin-top: 30px;
+    h2 {
+      color: #868686;
+      font-size: 25px;
+    }
+  }
+}
+
+.rating {
+  width: 548px;
+  height: 856px;
+  left: 1318px;
+  right: 54px;
+  top: 130px;
+  bottom: 94px;
+  border-radius: 9px;
+  background: #282828;
+}
+
+.main--panel {
+  flex: 1; /* равномерное распределение пространства между блоками */
+  box-sizing: border-box;
+  padding: 10px; /* регулируйте отступы внутри блоков по вашему вкусу */
+  display: flex;
+  gap: 20px;
+}
+
+.rating {
+  flex-basis: calc(
+    50% - 5px
+  ); /* вычисляем ширину, учитывая отступ между блоками */
+}
