@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { useRef, useState } from "react";
 import axiosClient from "../../axios-client";
+import RecaptchaChange from "../../components/recaptcha";
 import { useStateContext } from "../../contexts/ContextProvider";
+import Modal from "../../components/TermsOfUseModal";
 
 export default function Signup() {
   const nameRef = useRef();
@@ -95,11 +97,11 @@ export default function Signup() {
               <div className="titleTermsOfUse">
                 <h1>Пользовательское соглашение</h1>
               </div>
-              {/* <Modal
+              <Modal
                 isOpen={isModalOpen}
                 onClose={handleModalClose}
                 agreement={handleAgreement}
-              /> */}
+              />
             </div>
             <RecaptchaChange onChange={handleRecaptchaChange} />
             <button className="btn btn-block">Зарегистрироваться</button>

@@ -43,7 +43,7 @@ $theme-black: (
 }
 
 .login-signup-form .form {
-  width: 370px;
+  width: 302px;
   border-radius: 10px;
   position: relative;
   z-index: 1;
@@ -107,14 +107,17 @@ input {
   @include inputstyle();
 }
 ///// DEFAULT LAYOUT
+///
+
+$darken: 0.5; // Значение от 0 до 1, где 0 - без затемнения, 1 - полное затемнение
+$blur: 5px; // Значение размытия в пикселях
 #defaultLayout .content {
-  min-height: 100vh;
-  display: flex;
+  background: url(/src/image/background.jpeg) top no-repeat;
+  background-size: cover;
 }
 
 #defaultLayout header {
-  padding: 2rem 3rem;
-  background-color: #2a2a2a;
+  padding: 3rem 13rem;
   -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 1px 1px 2px #0003;
   display: flex;
@@ -124,7 +127,7 @@ input {
 
 #defaultLayout .content .sidebar {
   width: 200px;
-  background-color: #101010;
+  // background-color: #101010;
   padding: 2rem;
   transition: width 0.4s;
 }
@@ -166,7 +169,6 @@ input {
 ///
 ///
 ///
-///// DEFAULT MAIN
 #defaultLayout main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -176,19 +178,14 @@ input {
   -ms-flex-direction: column;
   flex-direction: column;
   margin: 0;
-  height: calc(100vh);
-  width: (100%);
-  overflow: hidden;
-  background: #373737;
-
+  height: calc(100vh - 101px);
+  width: 100%; /* Исправлено */
   background-size: cover;
   background-repeat: no-repeat;
   background-blend-mode: multiply;
 }
-///// DEFAULT MAIN
 
 .container {
-  background-color: #373737;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -200,15 +197,15 @@ input {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  overflow: hidden;
+  /* Убираем скрытие содержимого */
+  /* overflow: hidden; */
 }
 
-.controlPanel {
-}
+// .controlPanel {
+// }
 
 .headerInfo {
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 40px;
 }

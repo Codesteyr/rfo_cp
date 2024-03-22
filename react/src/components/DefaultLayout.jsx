@@ -60,7 +60,6 @@ const DefaultLayout = () => {
                   <h2>ГЛАВНАЯ</h2>
                 </NavLink>
               </div>
-              <hr />
               <div>
                 <NavLink
                   to="/download"
@@ -70,7 +69,6 @@ const DefaultLayout = () => {
                   <h2>СКАЧАТЬ</h2>
                 </NavLink>
               </div>
-              <hr />
               <div>
                 <NavLink
                   to="/donate"
@@ -80,7 +78,6 @@ const DefaultLayout = () => {
                   <h2>ДОНАТ</h2>
                 </NavLink>
               </div>
-              <hr />
               <div>
                 <a href="##">
                   <h2>САЙТ</h2>

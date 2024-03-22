@@ -2,6 +2,7 @@ import React, { createRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axiosClient from "../../axios-client";
 import { useStateContext } from "../../contexts/ContextProvider";
+import RecaptchaChange from "../../components/recaptcha";
 import "../../css/index.css";
 
 export default function Login() {
@@ -12,11 +13,6 @@ export default function Login() {
   const [message, setMessage] = useState(null);
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [skin, skinSet] = useState(true);
-
-  const toggleTheme = () => {
-    setIsDarkMode((prevMode) => !prevMode);
-    skinSet((prevMode) => !prevMode);
-  };
 
   const handleRecaptchaChange = (value) => {
     setRecaptchaToken(value);
@@ -46,11 +42,7 @@ export default function Login() {
   };
 
   return (
-    <div
-      className={`login-signup-form ${
-        isDarkMode ? "dark-theme" : "light-theme"
-      }`}
-    >
+    <div className={`login-signup-form`}>
       <div
         className={`skinWhite animatedSwipe fadeInLeft ${
           skin ? "skinVisible" : "skinHide"
@@ -83,14 +75,7 @@ export default function Login() {
           </form>
         </div>
       </div>
-      <div
-        className={`theme-switch-btn ${
-          isDarkMode ? "dark-mode" : "light-mode"
-        } ${isDarkMode ? "active" : ""}`}
-        onClick={toggleTheme}
-      >
-        <span>{isDarkMode ? "Dark" : "Light"}</span>
-      </div>
+
       <div
         className={`skinBlack animatedSwipe fadeInRight ${
           skin ? "skinHide" : "skinVisible"

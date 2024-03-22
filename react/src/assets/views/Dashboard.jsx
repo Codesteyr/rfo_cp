@@ -86,40 +86,86 @@ export default function Dashboard() {
     <div className="container">
       <div className="controlPanel">
         <div className="panel--row">
-          <div className="header--panel">
-            <div className="profile-title">
-              <p>ПРОФИЛЬ</p>
-            </div>
-            <div className="logout-btn">
-              <p>ВЫЙТИ</p>
-            </div>
-          </div>
           <div className="main--panel">
             <div className="account--information-board">
               <div className="account">
-                <div className="account--info">
-                  <div className="race--icon"></div>
-                  <div className="account--board">
-                    <div className="account-name">
-                      <p>ACCOUNT NAME</p>
-                      <h2>OC: 1000</h2>
-                    </div>
-                    <div className="account-desc">
-                      <p>RANGER</p>
-                      <h2>65 LVL</h2>
-                    </div>
-                  </div>
+                <div className="username--title">
+                  <p>USERNAME</p>
                 </div>
-                <div className="repair--account">
-                  <button>
-                    {" "}
-                    <p>ПОЧИНИТЬ ПЕРСОНАЖА</p>
-                  </button>
+                <div className="account--table">
+                  <div className="account--information">
+                    <h2>Создан: 8 марта, 2024 21:12</h2>
+                    <h2>Последний вход: 8 марта, 2024 22:20</h2>
+                  </div>
+                  <div className="account--information">
+                    <h2>Создан: 8 марта, 2024 21:12</h2>
+                    <h2>Последний вход: 8 марта, 2024 22:20</h2>
+                  </div>
                 </div>
               </div>
               <div className="account--detailed">
-                <div className="detailed--title">
-                  <h2>ПОДРОБНАЯ ИНФОРМАЦИЯ</h2>
+                <div className="detailed--card">
+                  <div className="account--info">
+                    <div className="race--icon"></div>
+                    <div className="account--board">
+                      <div className="account-name">
+                        <p>ACCOUNT NAME</p>
+                        <h2>OC: 1000</h2>
+                      </div>
+                      <div className="account-desc">
+                        <p>RANGER</p>
+                        <h2>65 LVL</h2>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="repair--account">
+                    <button className="blick">
+                      {" "}
+                      <p>ПОЧИНИТЬ ПЕРСОНАЖА</p>
+                    </button>
+                  </div>
+                </div>
+                <div className="detailed--card">
+                  <div className="account--info">
+                    <div className="race--icon"></div>
+                    <div className="account--board">
+                      <div className="account-name">
+                        <p>ACCOUNT NAME</p>
+                        <h2>OC: 1000</h2>
+                      </div>
+                      <div className="account-desc">
+                        <p>RANGER</p>
+                        <h2>65 LVL</h2>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="repair--account">
+                    <button className="blick">
+                      {" "}
+                      <p>ПОЧИНИТЬ ПЕРСОНАЖА</p>
+                    </button>
+                  </div>
+                </div>
+                <div className="detailed--card">
+                  <div className="account--info">
+                    <div className="race--icon"></div>
+                    <div className="account--board">
+                      <div className="account-name">
+                        <p>ACCOUNT NAME</p>
+                        <h2>OC: 1000</h2>
+                      </div>
+                      <div className="account-desc">
+                        <p>RANGER</p>
+                        <h2>65 LVL</h2>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="repair--account">
+                    <button className="blick">
+                      {" "}
+                      <p>ПОЧИНИТЬ ПЕРСОНАЖА</p>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
