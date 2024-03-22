@@ -49,7 +49,6 @@ const DefaultLayout = () => {
       <div className={`content ${isSidebarOpen ? "sidebar-open" : ""}`}>
         <header>
           <div className="content_header">
-            <div className="logoAion"></div>
             <div className="headerInfo">
               <div>
                 <NavLink
@@ -83,6 +82,11 @@ const DefaultLayout = () => {
                   <h2>САЙТ</h2>
                 </a>
               </div>
+            </div>
+            <div className="logout">
+              <button onClick={onLogout} href="#">
+                <h2>ВЫЙТИ</h2>
+              </button>
             </div>
           </div>
 

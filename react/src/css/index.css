@@ -330,8 +330,8 @@ input {
   -ms-flex-direction: column;
   flex-direction: column;
   margin: 0;
-  height: calc(100vh - 101px);
-  width: 100%; /* Исправлено */
+  height: calc(100vh - 119px);
+  width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   background-blend-mode: multiply;
@@ -707,6 +707,36 @@ h2 {
   -webkit-transform: translateY(-2px);
       -ms-transform: translateY(-2px);
           transform: translateY(-2px);
+}
+
+.content_header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.logout button {
+  width: 150px;
+  height: 35px;
+  border-radius: 5px;
+  background-color: #ff3b3b;
+  -webkit-box-shadow: 0 0 10px rgba(255, 0, 0, 0.54);
+          box-shadow: 0 0 10px rgba(255, 0, 0, 0.54);
+  -webkit-transition: background-color 0.5s, -webkit-box-shadow 0.5s, -webkit-transform 0.5s;
+  transition: background-color 0.5s, -webkit-box-shadow 0.5s, -webkit-transform 0.5s;
+  transition: background-color 0.5s, box-shadow 0.5s, transform 0.5s;
+  transition: background-color 0.5s, box-shadow 0.5s, transform 0.5s, -webkit-box-shadow 0.5s, -webkit-transform 0.5s;
+}
+.logout button:hover {
+  -webkit-box-shadow: 0 0 20px rgba(255, 0, 0, 0.35);
+          box-shadow: 0 0 20px rgba(255, 0, 0, 0.35);
+  -webkit-transform: scale(1.02);
+      -ms-transform: scale(1.02);
+          transform: scale(1.02);
 }
 
 /* Модальное окно */
@@ -1155,6 +1185,8 @@ h2 {
   padding: 10px 10px 10px 39px;
 }
 .donate-input input {
+  text-align: center;
+  font-size: 20px;
   width: 369px;
   height: 45px;
 }
@@ -1267,4 +1299,71 @@ h2 {
 .fadeindown {
   -webkit-animation: fadeindown 800ms;
           animation: fadeindown 800ms;
+}
+
+@media screen and (max-width: 444px) and (max-height: 896px) {
+  .account {
+    height: 134px;
+    width: 420px;
+  }
+  .repair--account .blick p {
+    display: none;
+  }
+  .repair--account .blick::before {
+    content: "ПОЧИНИТЬ";
+  }
+  .repair--account .blick {
+    color: #fff;
+  }
+  #defaultLayout header {
+    padding: 2rem 2rem;
+  }
+  ::-webkit-scrollbar {
+    height: 0px;
+  }
+  .account .account--table {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0;
+    width: 100%;
+    gap: 0;
+    overflow: hidden;
+  }
+  .account .account--table h2 {
+    font-size: 13px;
+  }
+  .account--information h2 {
+    font-size: 13px;
+  }
+  .account--detailed {
+    padding: 20px 0px 0px 0px;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    gap: 10px;
+    width: 420px;
+    height: 311px;
+  }
+  .account--detailed .detailed--card {
+    width: 400px;
+    height: 88px;
+  }
+  .account--detailed .detailed--card p {
+    font-size: 13px;
+  }
+  .account--detailed .detailed--card h2 {
+    font-size: 13px;
+  }
+  .repair--account button {
+    height: 40px;
+    width: 120px;
+  }
+  .rating {
+    display: none;
+  }
 }
