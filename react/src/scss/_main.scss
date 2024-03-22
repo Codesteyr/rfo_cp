@@ -1,0 +1,209 @@
+@mixin inputstyle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: 0;
+  background: #2e2e2e;
+  color: #fff;
+  width: 100%;
+  font-family: "El Messiri", sans-serif;
+  font-size: 17px;
+  border-radius: 4px;
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  &::placeholder {
+    color: #999; // Цвет текста placeholder
+  }
+}
+
+$theme-black: (
+  "body-color": #101010,
+  "input-color": #2e2e2e,
+  // "form-color": lighten(#1C1C1C, 10%),
+  form-color: rgba(28, 28, 28, 0.7),
+);
+
+.login-signup-form {
+  background: #111111;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-signup-form .form {
+  width: 302px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+  background: map-get($theme-black, "form-color");
+  max-width: 370px;
+  padding: 34px;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.login-signup-form .title {
+  font-size: 20px;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #fff;
+}
+
+.login-signup-form .form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 16px;
+  text-align: center;
+}
+
+.login-signup-form .form .message a {
+  color: #96d3ff;
+  text-decoration: none;
+}
+
+input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  outline: 0;
+  background: #2e2e2e;
+  color: #fff;
+  width: 100%;
+  font-family: "El Messiri", sans-serif;
+  font-size: 17px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login input {
+  @include inputstyle();
+}
+
+.loginSignup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.loginSignup input {
+  @include inputstyle();
+}
+///// DEFAULT LAYOUT
+///
+
+$darken: 0.5; // Значение от 0 до 1, где 0 - без затемнения, 1 - полное затемнение
+$blur: 5px; // Значение размытия в пикселях
+#defaultLayout .content {
+  background: url(/src/image/background.jpeg) top no-repeat;
+  background-size: cover;
+}
+
+#defaultLayout header {
+  padding: 3rem 17rem;
+  display: flex;
+  justify-content: space-between;
+  // align-items: center;
+}
+
+#defaultLayout .content .sidebar {
+  width: 200px;
+  // background-color: #101010;
+  padding: 2rem;
+  transition: width 0.4s;
+}
+
+#defaultLayout .content.sidebar-open .sidebar {
+  width: 0;
+}
+
+.sidebar-open {
+  display: none;
+}
+
+#defaultLayout .content .main-content {
+  flex-grow: 1;
+  padding: 2rem;
+  transition: margin-left 0.4s;
+}
+
+#defaultLayout .content.sidebar-open .main-content {
+  margin-left: 200px;
+}
+
+#defaultLayout .burger-menu {
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+#defaultLayout .burger-menu .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+///// DEFAULT LAYOUT
+///
+///
+///
+#defaultLayout main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 0;
+  height: calc(100vh - 119px);
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+}
+
+.container {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  /* Убираем скрытие содержимого */
+  /* overflow: hidden; */
+}
+
+// .controlPanel {
+// }
+
+.headerInfo {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}

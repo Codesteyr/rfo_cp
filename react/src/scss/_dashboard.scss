@@ -1,0 +1,300 @@
+@mixin paragraphText($fontSize: 16px, $font-weight: 800) {
+  color: #fff;
+  font-family: "El Messiri", sans-serif;
+  font-weight: $font-weight;
+  letter-spacing: 0%;
+  text-align: center;
+  font-size: $fontSize; // Добавляем свойство font-size
+  transition: all 0.3s ease;
+}
+
+@mixin font($size, $weight) {
+  font-family: "El Messiri", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: $weight;
+  font-style: normal;
+  font-size: $size;
+}
+
+@mixin account-color {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.6
+  ); // Увеличиваем прозрачность для более матового эффекта
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  transition: all 0.3s ease; // Анимация изменений
+
+  &:hover {
+    transform: translateY(
+      -2px
+    ); // При наведении добавляем небольшую анимированную тень
+  }
+}
+
+hr {
+  width: 200px;
+  height: 2px;
+  border-radius: 1px;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+}
+p {
+  @include font(20px, 700);
+  color: #fff;
+}
+h2 {
+  @include font(17px, 800);
+  color: #fff;
+}
+
+.header--panel {
+  display: flex;
+  margin: 20px;
+  justify-content: space-between;
+}
+.account--information-board {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.account--board {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+// .source-serif 4-<uniquifier> {
+//   font-family: "Source Serif 4", serif;
+//   font-optical-sizing: auto;
+//   font-weight: <weight>;
+//   font-style: normal;
+// }
+
+.account {
+  width: 957px;
+  height: 182px;
+  /* Автолейаут */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0px;
+  border-radius: 27px;
+  @include account-color;
+}
+
+.account-desc {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  h2 {
+    color: #807f7f;
+  }
+}
+
+.account-name {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  h2 {
+    color: #d0e5b9;
+  }
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+  .rating--title {
+    margin-top: 30px;
+    h2 {
+      color: #fff;
+      font-size: 25px;
+    }
+  }
+}
+
+@mixin blick() {
+  box-shadow: 0 0 10px rgba(68, 255, 0, 0.54);
+  transition: background-color 0.5s, box-shadow 0.5s, transform 0.5s;
+
+  &:hover {
+    box-shadow: 0 0 20px rgba(68, 255, 0, 0.35);
+    transform: scale(1.02);
+  }
+}
+
+.repair--account button {
+  width: 221px;
+  height: 45px;
+  left: 1007px;
+  right: 686px;
+  top: 193px;
+  bottom: 832px;
+  /* Автолейаут */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background: rgb(152, 215, 146);
+  p {
+    font-size: 16px;
+  }
+  @include blick;
+}
+
+.account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  .account--table {
+    display: flex;
+    gap: 273px;
+  }
+}
+
+.account--info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.race--icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+}
+
+.race--icon img {
+  background-size: contain;
+  width: 100%;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+.race--icon img:hover {
+  transform: scale(1.1);
+}
+
+.account--detailed {
+  @include account-color;
+
+  width: 957px;
+  height: 527px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  justify-content: center;
+  .detailed--title {
+    margin-top: 30px;
+    h2 {
+      color: #fff;
+      font-size: 25px;
+    }
+  }
+}
+
+.rating {
+  @include account-color;
+  width: 548px;
+  height: 732px;
+
+  border-radius: 24px;
+}
+
+.main--panel {
+  flex: 1; /* равномерное распределение пространства между блоками */
+  box-sizing: border-box;
+  padding: 10px; /* регулируйте отступы внутри блоков по вашему вкусу */
+  display: flex;
+  gap: 20px;
+}
+
+.rating {
+  flex-basis: calc(
+    50% - 5px
+  ); /* вычисляем ширину, учитывая отступ между блоками */
+}
+
+.logout-btn button {
+  width: 197px;
+  height: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background: rgb(255, 90, 90);
+}
+
+.detailed--card {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 871px;
+  height: 115px;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.3); // Прозрачный черный цвет
+
+  transition: all 0.3s ease;
+
+  // Анимация при наведении
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.content_header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logout button {
+  width: 150px;
+  height: 35px;
+  border-radius: 5px;
+  background-color: rgba($color: #ff3b3b7c, $alpha: 1);
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.54);
+  transition: background-color 0.5s, box-shadow 0.5s, transform 0.5s;
+
+  &:hover {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.35);
+    transform: scale(1.02);
+  }
+}
+
+.isLoading {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading {
+  width: 40px;
+  height: 10px;
+  background: radial-gradient(circle closest-side, #9f9c9c 90%, #0000) 0 0/33%
+    100% space;
+  clip-path: inset(0 100% 0 0);
+  animation: d1 0.5s steps(4) infinite;
+}
+@keyframes d1 {
+  to {
+    clip-path: inset(0 -34% 0 0);
+  }
+}
