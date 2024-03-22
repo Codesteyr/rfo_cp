@@ -1,3 +1,4 @@
 _docker/mysql/mysql.env
 _docker/nginx/conf.d/app.conf
 _docker/nginx/logs
+_docker/mysql/dbdata
