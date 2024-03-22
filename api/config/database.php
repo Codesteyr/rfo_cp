@@ -78,19 +78,29 @@ return [
             'sslmode' => 'prefer',
         ],
 
-        'sqlsrv' => [
+        'rf_user' => [
             'driver' => 'sqlsrv',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '1433'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => env('RF_USER_DB_HOST', 'localhost'),
+            'port' => env('RF_USER_DB_PORT', '1433'),
+            'database' => env('RF_USER_DB_DATABASE', 'forge'),
+            'username' => env('RF_USER_DB_USERNAME', 'forge'),
+            'password' => env('RF_USER_DB_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
-            // 'encrypt' => env('DB_ENCRYPT', 'yes'),
-            // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
+        ],
+        'rf_world' => [
+            'driver' => 'sqlsrv',
+            'url' => env('DATABASE_URL'),
+            'host' => env('RF_WORLD_DB_HOST', 'localhost'),
+            'port' => env('RF_WORLD_DB_PORT', '1433'),
+            'database' => env('RF_WORLD_DB_DATABASE', 'forge'),
+            'username' => env('RF_WORLD_DB_USERNAME', 'forge'),
+            'password' => env('RF_WORLD_DB_PASSWORD', ''),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
         ],
 
     ],
@@ -125,7 +135,7 @@ return [
 
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_') . '_database_'),
         ],
 
         'default' => [
