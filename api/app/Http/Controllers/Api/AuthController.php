@@ -24,7 +24,7 @@ class AuthController extends Controller
     // }
 
 
-    public function signup(Request $request)
+    public function signup(SignupRequest $request)
     {
 
         $data = $request->validated();
