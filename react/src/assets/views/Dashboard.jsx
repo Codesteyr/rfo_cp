@@ -11,11 +11,9 @@ export default function Dashboard() {
     setUser,
     setToken,
     setAccount,
-    persons,
-    setPersons,
+    arrayPerson,
     isLoading,
   } = useStateContext();
-
   const [selectedPerson, setSelectedPerson] = useState("");
   const [classIcon, setClassIcon] = useState("");
   const [error, setError] = useState(null);
@@ -78,7 +76,7 @@ export default function Dashboard() {
       setUser({});
       setAccount({});
       setToken(null);
-      setPersons({});
+      // setPersons({});
     });
   };
 
@@ -90,7 +88,7 @@ export default function Dashboard() {
             <div className="account--information-board fadeinleft">
               <div className="account">
                 <div className="username--title">
-                  <p>USERNAME</p>
+                  <p>{user.name}</p>
                 </div>
                 <div className="account--table">
                   <div className="account--information">
@@ -103,70 +101,49 @@ export default function Dashboard() {
                   </div>
                 </div>
               </div>
-              <div className="account--detailed ">
-                <div className="detailed--card">
-                  <div className="account--info">
-                    <div className="race--icon"></div>
-                    <div className="account--board">
-                      <div className="account-name">
-                        <p>ACCOUNT NAME</p>
-                        <h2>OC: 1000</h2>
-                      </div>
-                      <div className="account-desc">
-                        <p>RANGER</p>
-                        <h2>65 LVL</h2>
-                      </div>
-                    </div>
+              <div className="account--detailed">
+                {isLoading ? ( // Если isLoading равно true, показываем загрузочную анимацию
+                  <div className="isLoading">
+                    <div className="loading"></div>
                   </div>
-                  <div className="repair--account">
-                    <button className="blick">
-                      {" "}
-                      <p>ПОЧИНИТЬ ПЕРСОНАЖА</p>
-                    </button>
-                  </div>
-                </div>
-                <div className="detailed--card">
-                  <div className="account--info">
-                    <div className="race--icon"></div>
-                    <div className="account--board">
-                      <div className="account-name">
-                        <p>ACCOUNT NAME</p>
-                        <h2>OC: 1000</h2>
+                ) : (
+                  // Иначе отображаем список персонажей
+                  Object.keys(arrayPerson).map((key) => (
+                    <div key={arrayPerson[key].id} className="detailed--card">
+                      <div className="account--info">
+                        <div className="race--icon">
+                          {arrayPerson && (
+                            <img
+                              src={`src/image/race/${arrayPerson[key].Race}.png`}
+                              className={`${
+                                animateClass ? "animated fadeInDown" : ""
+                              }`}
+                            />
+                          )}
+                        </div>
+                        <div className="account--board">
+                          <div className="account-name">
+                            <p>{arrayPerson[key].Name}</p>
+                            {/* Используйте реальное свойство из данных о персонаже */}
+                            {/* Пример: <h2>OC: {persons[key].oc}</h2> */}
+                          </div>
+                          <div className="account-desc">
+                            {/* Используйте другие свойства из данных о персонаже */}
+                            {/* Пример: <p>{persons[key].characterClass}</p> */}
+                            <p>{arrayPerson[key].Class}</p>
+
+                            <h2>{arrayPerson[key].Lv} LVL</h2>
+                          </div>
+                        </div>
                       </div>
-                      <div className="account-desc">
-                        <p>RANGER</p>
-                        <h2>65 LVL</h2>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="repair--account">
-                    <button className="blick">
-                      {" "}
-                      <p>ПОЧИНИТЬ ПЕРСОНАЖА</p>
-                    </button>
-                  </div>
-                </div>
-                <div className="detailed--card">
-                  <div className="account--info">
-                    <div className="race--icon"></div>
-                    <div className="account--board">
-                      <div className="account-name">
-                        <p>ACCOUNT NAME</p>
-                        <h2>OC: 1000</h2>
-                      </div>
-                      <div className="account-desc">
-                        <p>RANGER</p>
-                        <h2>65 LVL</h2>
+                      <div className="repair--account">
+                        <button className="blick">
+                          <p>ПОЧИНИТЬ ПЕРСОНАЖА</p>
+                        </button>
                       </div>
                     </div>
-                  </div>
-                  <div className="repair--account">
-                    <button className="blick">
-                      {" "}
-                      <p>ПОЧИНИТЬ ПЕРСОНАЖА</p>
-                    </button>
-                  </div>
-                </div>
+                  ))
+                )}
               </div>
             </div>
 

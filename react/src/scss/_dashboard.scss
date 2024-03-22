@@ -169,14 +169,22 @@ h2 {
 }
 
 .race--icon {
-  background: url("/src/image/race/cora.png") top no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+}
+
+.race--icon img {
   background-size: contain;
-  width: 65px;
-  height: 65px;
+  width: 100%;
+  height: auto;
   transition: all 0.3s ease;
-  &:hover {
-    transform: scale(1.1);
-  }
+}
+
+.race--icon img:hover {
+  transform: scale(1.1);
 }
 
 .account--detailed {
@@ -266,5 +274,27 @@ h2 {
   &:hover {
     box-shadow: 0 0 20px rgba(255, 0, 0, 0.35);
     transform: scale(1.02);
+  }
+}
+
+.isLoading {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading {
+  width: 40px;
+  height: 10px;
+  background: radial-gradient(circle closest-side, #9f9c9c 90%, #0000) 0 0/33%
+    100% space;
+  clip-path: inset(0 100% 0 0);
+  animation: d1 0.5s steps(4) infinite;
+}
+@keyframes d1 {
+  to {
+    clip-path: inset(0 -34% 0 0);
   }
 }

@@ -575,14 +575,28 @@ h2 {
 }
 
 .race--icon {
-  background: url("/src/image/race/cora.png") top no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80px;
+  height: 80px;
+}
+
+.race--icon img {
   background-size: contain;
-  width: 65px;
-  height: 65px;
+  width: 100%;
+  height: auto;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.race--icon:hover {
+
+.race--icon img:hover {
   -webkit-transform: scale(1.1);
       -ms-transform: scale(1.1);
           transform: scale(1.1);
@@ -739,6 +753,43 @@ h2 {
           transform: scale(1.02);
 }
 
+.isLoading {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.loading {
+  width: 40px;
+  height: 10px;
+  background: radial-gradient(circle closest-side, #9f9c9c 90%, rgba(0, 0, 0, 0)) 0 0/33% 100% space;
+  -webkit-clip-path: inset(0 100% 0 0);
+          clip-path: inset(0 100% 0 0);
+  -webkit-animation: d1 0.5s steps(4) infinite;
+          animation: d1 0.5s steps(4) infinite;
+}
+
+@-webkit-keyframes d1 {
+  to {
+    -webkit-clip-path: inset(0 -34% 0 0);
+            clip-path: inset(0 -34% 0 0);
+  }
+}
+
+@keyframes d1 {
+  to {
+    -webkit-clip-path: inset(0 -34% 0 0);
+            clip-path: inset(0 -34% 0 0);
+  }
+}
 /* Модальное окно */
 .modal-overlay {
   position: fixed;

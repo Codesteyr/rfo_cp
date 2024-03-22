@@ -7,8 +7,11 @@ const DefaultLayout = () => {
   const {
     user,
     token,
+    userData,
     setUser,
-    setToken,
+    setUserData,
+    arrayPerson,
+    setArrayPerson,
     setProducts,
     setIsLoading,
     notification,
@@ -19,8 +22,18 @@ const DefaultLayout = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const productResponse = await axiosClient.get(`/shugoproduct`);
-        setProducts(productResponse.data.data);
+        const userResponse = await axiosClient.post("/getUser");
+        setUserData(userResponse.data.userData);
+        setUser(userResponse.data.userData.user);
+        setArrayPerson(userResponse.data.userData.arrayPersonData);
+
+        setAccount(userResponse.data.account);
+        setPersons(userResponse.data.persons);
+        setPersons(userResponse.data.persons);
+        setPayLog(userResponse.data.payLog);
+        setUserRole(userResponse.data.user.role);
+        setPurchasedLog(userResponse.data.purchasedLog);
+        setConnectionVipLog(userResponse.data.connectionVipLog);
         setIsLoading(false);
       } catch (error) {
         setIsLoading(false);
@@ -28,7 +41,9 @@ const DefaultLayout = () => {
     };
 
     fetchData();
-  }, [setProducts, setIsLoading]);
+  }, []);
+
+  console.log(userData);
 
   const onLogout = (ev) => {
     ev.preventDefault();
