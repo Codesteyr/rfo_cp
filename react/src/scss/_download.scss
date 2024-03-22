@@ -1,0 +1,84 @@
+.download--navigation {
+  display: flex;
+  gap: 29px;
+
+  .download-client {
+    @include account-color;
+    width: 550px;
+    height: 700px;
+    border-radius: 27px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+
+    .client-image {
+      background: url("/src/image/race/cora.png") top no-repeat;
+      background-size: contain;
+      width: 480px;
+      height: 430px;
+      border-radius: 25px;
+      background: rgba(255, 255, 255, 0.45);
+    }
+    p {
+      font-size: 25px;
+    }
+  }
+  .download-button button {
+    width: 480px;
+    height: 45px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 6px;
+    background: rgb(152, 215, 146);
+    -webkit-box-shadow: 0 0 10px rgba(68, 255, 0, 0.54);
+    box-shadow: 0 0 10px rgba(68, 255, 0, 0.54);
+    -webkit-transition: background-color 0.5s, -webkit-box-shadow 0.5s,
+      -webkit-transform 0.5s;
+    transition: background-color 0.5s, -webkit-box-shadow 0.5s,
+      -webkit-transform 0.5s;
+    transition: background-color 0.5s, box-shadow 0.5s, transform 0.5s;
+    transition: background-color 0.5s, box-shadow 0.5s, transform 0.5s,
+      -webkit-box-shadow 0.5s, -webkit-transform 0.5s;
+    transition: all 0.3s ease;
+
+    @include blick;
+  }
+  .download-launcher {
+    @include account-color;
+
+    width: 550px;
+    height: 700px;
+    border-radius: 27px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+
+    .client-image--launcher {
+      background: url("/src/image/race/cora.png") top no-repeat;
+      background-size: contain;
+
+      width: 480px;
+      height: 430px;
+      border-radius: 25px;
+      background: rgba(255, 255, 255, 0.45);
+    }
+    p {
+      font-size: 25px;
+    }
+  }
+}
