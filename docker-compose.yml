@@ -14,6 +14,8 @@ services:
     container_name: cp_rfo_app
     # depends_on:
     #   - db
+    networks:
+      - network
 
   nginx:
     image: nginx:alpine
@@ -27,25 +29,29 @@ services:
     container_name: cp_rfo_nginx
     depends_on:
       - backend
-  # db:
-  #   image: mysql:5.7.22
-  #   restart: unless-stopped
-  #   ports:
-  #     - "3306:3306"
-  #   command:
-  #     [
-  #       '--character-set-server=utf8mb4',
-  #       '--collation-server=utf8mb4_unicode_ci',
-  #       '--default-authentication-plugin=mysql_native_password'
-  #     ]
-  #   env_file:
-  #     - ./_docker/mysql/mysql.env
-  #   volumes:
-  #     - ./_docker/mysql/dbdata:/var/lib/mysql
-  #     - ./_docker/mysql/my.cnf:/etc/mysql/my.cnf
-  #   container_name: cp_aion_mysql
-  #   healthcheck:
-  #     test: [ "CMD", "mysqladmin", "ping" ]
+    networks:
+      - network
+  db:
+    image: mysql:5.7.22
+    restart: unless-stopped
+    ports:
+      - "3307:3306"
+    command:
+      [
+        '--character-set-server=utf8mb4',
+        '--collation-server=utf8mb4_unicode_ci',
+        '--default-authentication-plugin=mysql_native_password'
+      ]
+    env_file:
+      - ./_docker/mysql/mysql.env
+    volumes:
+      - ./_docker/mysql/dbdata:/var/lib/mysql
+      - ./_docker/mysql/my.cnf:/etc/mysql/my.cnf
+    container_name: cp_rfo_mysql
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping" ]
+    networks:
+      - network
 
   # node:
   #   build:
@@ -60,3 +66,7 @@ services:
   #   volumes:
   #     - .:/home/node/app
   #   container_name: cp_aion_nodejs
+
+networks:
+  network:
+    driver: bridge
