@@ -1,0 +1,78 @@
+.donate-board {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .donate {
+    @include account-color;
+
+    display: flex;
+    width: 1480px;
+    height: 113px;
+    border-radius: 14px;
+    align-items: center;
+  }
+}
+
+.donate-history {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  p {
+    font-size: 24px;
+  }
+
+  @include account-color;
+  width: 650px;
+  height: 650px;
+  border-radius: 27px;
+  .donate-history--board {
+    width: 600px;
+    height: 550px;
+    border-radius: 17px;
+    background: rgba(255, 255, 255, 0.45);
+  }
+}
+
+.donate-down--board {
+  display: flex;
+  justify-content: space-between;
+}
+
+.donate-shop {
+  @include account-color;
+  border-radius: 20px;
+  height: 100%;
+  width: 55%;
+}
+
+.donate-input {
+  padding: 10px 10px 10px 39px;
+  input {
+    width: 369px;
+    height: 45px;
+  }
+}
+
+.donate-button button {
+  width: 221px;
+  height: 45px;
+  left: 1007px;
+  right: 686px;
+  top: 193px;
+  bottom: 832px;
+  /* Автолейаут */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background: rgb(152, 215, 146);
+  p {
+    font-size: 16px;
+  }
+  @include blick;
+}

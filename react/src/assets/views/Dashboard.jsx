@@ -86,8 +86,8 @@ export default function Dashboard() {
     <div className="container">
       <div className="controlPanel">
         <div className="panel--row">
-          <div className="main--panel">
-            <div className="account--information-board">
+          <div className="main--panel ">
+            <div className="account--information-board fadeinleft">
               <div className="account">
                 <div className="username--title">
                   <p>USERNAME</p>
@@ -103,7 +103,7 @@ export default function Dashboard() {
                   </div>
                 </div>
               </div>
-              <div className="account--detailed">
+              <div className="account--detailed ">
                 <div className="detailed--card">
                   <div className="account--info">
                     <div className="race--icon"></div>
@@ -170,7 +170,7 @@ export default function Dashboard() {
               </div>
             </div>
 
-            <div className="rating">
+            <div className="rating fadeinright">
               <div className="rating--title">
                 <h2>РЕЙТИНГ</h2>
               </div>

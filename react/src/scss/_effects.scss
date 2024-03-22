@@ -1,0 +1,45 @@
+@mixin fadein($direction) {
+  animation: fadein#{$direction} 800ms;
+}
+
+@keyframes fadeinleft {
+  0% {
+    transform: translateX(-50px);
+  }
+}
+
+@keyframes fadeinright {
+  0% {
+    transform: translateX(50px);
+  }
+}
+
+@keyframes fadeinup {
+  0% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeindown {
+  0% {
+    transform: translateY(20px);
+  }
+}
+
+.fadeinup {
+  @include fadein(up);
+}
+
+.fadeinleft {
+  @include fadein(left);
+}
+
+.fadeinright {
+  @include fadein(right);
+}
+
+.fadeindown {
+  @include fadein(down);
+}
+
+///fadein --
