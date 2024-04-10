@@ -49,7 +49,7 @@ p {
 }
 h2 {
   @include font(17px, 800);
-  color: #fff;
+  color: #ffffff;
 }
 
 .header--panel {
@@ -296,5 +296,35 @@ h2 {
 @keyframes d1 {
   to {
     clip-path: inset(0 -34% 0 0);
+  }
+}
+
+// Переменные для цветов и времени анимации
+$primary-color: rgb(255, 255, 255);
+$highlight-color: #ffffff;
+$animation-duration: 0.8s;
+
+.active {
+  h2 {
+    filter: drop-shadow(0 0 10px $highlight-color);
+  }
+}
+
+$primary-color: rgb(255, 255, 255);
+$highlight-color: #ffffff;
+$animation-duration: 0.3s;
+
+// Стили для активного элемента nav-link
+.nav-link {
+  h2 {
+    color: $primary-color;
+    position: relative;
+    overflow: hidden;
+    transition: filter $animation-duration;
+
+    // При наведении добавляем эффект drop-shadow
+    &:hover {
+      filter: drop-shadow(0 0 15px $highlight-color);
+    }
   }
 }
