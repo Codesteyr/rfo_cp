@@ -386,7 +386,7 @@ h2 {
   font-weight: 800;
   font-style: normal;
   font-size: 17px;
-  color: #fff;
+  color: #ffffff;
 }
 
 .header--panel {
@@ -790,6 +790,25 @@ h2 {
             clip-path: inset(0 -34% 0 0);
   }
 }
+.active h2 {
+  -webkit-filter: drop-shadow(0 0 10px #ffffff);
+          filter: drop-shadow(0 0 10px #ffffff);
+}
+
+.nav-link h2 {
+  color: rgb(255, 255, 255);
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: -webkit-filter 0.3s;
+  transition: -webkit-filter 0.3s;
+  transition: filter 0.3s;
+  transition: filter 0.3s, -webkit-filter 0.3s;
+}
+.nav-link h2:hover {
+  -webkit-filter: drop-shadow(0 0 15px #ffffff);
+          filter: drop-shadow(0 0 15px #ffffff);
+}
+
 /* Модальное окно */
 .modal-overlay {
   position: fixed;
